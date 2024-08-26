@@ -1,0 +1,11 @@
+POST http://api.imc.chillo.fr/imc
+Content-Type: application/json
+
+{
+  "taille": 180,
+  "poids": 200
+}
+
+###
+
+GET http://api.imc.chillo.fr/imc
