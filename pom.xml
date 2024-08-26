@@ -57,7 +57,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>simachille/${project.artifactId}:${project.version}</name>
+						<name>docker.io/library/simachille/${project.artifactId}:${project.version}</name>
 						<env>
 							<BP_JVM_VERSION>17</BP_JVM_VERSION>
 						</env>
