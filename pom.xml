@@ -62,6 +62,12 @@
 							<BP_JVM_VERSION>17</BP_JVM_VERSION>
 						</env>
 					</image>
+					<docker>
+						<publishRegistry>
+							<username>${docker.publishRegistry.username}</username>
+							<password>${docker.publishRegistry.password}</password>
+						</publishRegistry>
+					</docker>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
