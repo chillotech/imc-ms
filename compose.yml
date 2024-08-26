@@ -1,0 +1,15 @@
+services:
+  imc-ms:
+    image: simachille/imc-ms:0.0.3
+    container_name: imc-ms
+    restart: always
+    environment:
+      - spring.datasource.url=${DB_HOST}
+      - spring.datasource.username=${DB_USERNAME}
+      - spring.datasource.password=${DB_PASSWORD}
+    networks:
+      - applications-network
+networks:
+  applications-network:
+    external: true
+    name: applications-network
