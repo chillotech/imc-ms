@@ -60,6 +60,8 @@
 						<name>simachille/${project.artifactId}:${project.version}</name>
 						<env>
 							<BP_JVM_VERSION>17</BP_JVM_VERSION>
+							<BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
+							<BPE_APPEND_JAVA_TOOL_OPTIONS>-XX:+HeapDumpOnOutOfMemoryError</BPE_APPEND_JAVA_TOOL_OPTIONS>
 						</env>
 					</image>
 					<docker>
