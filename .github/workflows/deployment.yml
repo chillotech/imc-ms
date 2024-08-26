@@ -19,6 +19,8 @@ jobs:
             mkdir /opt/applications/imc/${{env.IMAGE}}
             ls -al /opt/applications/imc
 
+           
+  
   generate-image:
     name: generate image
     runs-on: ubuntu-latest
@@ -62,7 +64,8 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
-            echo DB_HOST="${{ secrets.DB_HOST }}" >> /opt/applications/imc/${{env.IMAGE}}/.env
+            echo DB_HOST="${{ secrets.DB_HOST }}" > /opt/applications/imc/${{env.IMAGE}}/.env
             echo DB_USERNAME="${{ secrets.DB_USERNAME }}" >> /opt/applications/imc/${{env.IMAGE}}/.env
-            echo DB_USERNAME="${{ secrets.DB_PASSWORD }}" >> /opt/applications/imc/${{env.IMAGE}}/.env
+            echo DB_PASSWORD="${{ secrets.DB_PASSWORD }}" >> /opt/applications/imc/${{env.IMAGE}}/.env
             docker compose -f /opt/applications/imc/${{env.IMAGE}}/compose.yml up -d
+            rm /opt/applications/imc/${{env.IMAGE}}/.env
